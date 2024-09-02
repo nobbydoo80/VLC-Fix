@@ -1,0 +1,21 @@
+name: VLC Troubleshooting Script Workflow
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  run-batch-script:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run VLC Troubleshoot Batch Script
+        run: |
+          ./VLC_Troubleshoot.bat
